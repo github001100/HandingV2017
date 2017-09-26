@@ -15,4 +15,12 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <RelativeLayout
+        android:layout_width="433dp"
+        android:layout_height="743dp"
+        tools:layout_editor_absoluteY="-27dp"
+        tools:layout_editor_absoluteX="-26dp">
+
+    </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>
