@@ -4,40 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login"
     tools:context="com.hdmes.handingv2017.MainActivity">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="215dp"
-        android:layout_height="49dp"
-        android:text="登录"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="229dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello Handing!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="请输入用户名"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="96dp" />
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="请输入密码"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="148dp" />
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="91dp"
-        app:srcCompat="@drawable/a20170916"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="4dp" />
+    <RelativeLayout
+        android:layout_width="433dp"
+        android:layout_height="743dp"
+        tools:layout_editor_absoluteY="-9dp"
+        tools:layout_editor_absoluteX="-27dp">
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="请输入您的账号"
+            android:textColor="#999999"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="415dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="63dp"
+            android:layout_marginBottom="278dp" />
+    </RelativeLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>
