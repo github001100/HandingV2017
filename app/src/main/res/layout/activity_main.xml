@@ -28,8 +28,14 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
+            android:hint="请输入您的账号"
+            android:textColor="#999999"
             tools:layout_editor_absoluteX="24dp"
-            tools:layout_editor_absoluteY="415dp" />
+            tools:layout_editor_absoluteY="415dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="63dp"
+            android:layout_marginBottom="278dp" />
     </RelativeLayout>
 
 
