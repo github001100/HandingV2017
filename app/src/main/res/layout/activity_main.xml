@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login"
+    android:orientation="vertical"
     tools:context="com.hdmes.handingv2017.MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hello Handing!"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -16,28 +18,19 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RelativeLayout
-        android:layout_width="433dp"
-        android:layout_height="743dp"
-        tools:layout_editor_absoluteY="-9dp"
-        tools:layout_editor_absoluteX="-27dp">
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="278dp"
+        android:layout_marginStart="63dp"
+        android:ems="10"
+        android:hint="请输入您的账号"
+        android:inputType="textPersonName"
+        android:textColor="#999999"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="415dp" />
 
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="请输入您的账号"
-            android:textColor="#999999"
-            tools:layout_editor_absoluteX="24dp"
-            tools:layout_editor_absoluteY="415dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="63dp"
-            android:layout_marginBottom="278dp" />
-    </RelativeLayout>
-
-
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
