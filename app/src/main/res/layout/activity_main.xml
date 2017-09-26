@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login"
     tools:context="com.hdmes.handingv2017.MainActivity">
 
     <TextView
@@ -18,9 +19,19 @@
     <RelativeLayout
         android:layout_width="433dp"
         android:layout_height="743dp"
-        tools:layout_editor_absoluteY="-27dp"
-        tools:layout_editor_absoluteX="-26dp">
+        tools:layout_editor_absoluteY="-9dp"
+        tools:layout_editor_absoluteX="-27dp">
 
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="415dp" />
     </RelativeLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>
