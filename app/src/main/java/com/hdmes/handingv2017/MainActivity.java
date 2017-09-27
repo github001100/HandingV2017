@@ -21,10 +21,15 @@ public class MainActivity extends AppCompatActivity {
         txt3.getPaint().setFlags(Paint. UNDERLINE_TEXT_FLAG );
         txt4.getPaint().setFlags(Paint. UNDERLINE_TEXT_FLAG );
         //账号密码输入提示
+        final EditText edittxt2=(EditText)findViewById(R.id.editText2);
+        final EditText edittxt3=(EditText)findViewById(R.id.editText3);
         Button btn1 = (Button) findViewById(R.id.button);
         btn1.setOnClickListener(new Button.OnClickListener() {//设置监听
             public void onClick(View v) {
-                //
+                if(edittxt2.length()==0 || edittxt3.length()==0)
+                {
+                    Toast.makeText(getApplicationContext(),"请输入账号或密码！", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
