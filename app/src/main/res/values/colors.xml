@@ -7,4 +7,5 @@
     <color name="colorLogin">#ffffff</color>
     <color name="colorLoginButton">#393d3e</color>
     <color name="colorNotAccount">#768dac</color>
+    <color name="colorBackground">#0d1114</color>
 </resources>
