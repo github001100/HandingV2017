@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HandingV2017</string>
+    <string name="app_name">Handing</string>
     <string name="app_account">请输入您的账号</string>
     <string name="app_password">请输入您的密码</string>
     <string name="app_login">登录</string>

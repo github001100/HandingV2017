@@ -16,19 +16,19 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="100dp"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="@null"/>
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="200dp"
         android:background="@color/colorLogin"
-        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:ems="10"
         android:hint="@string/app_account"
         android:inputType="textPersonName"
@@ -40,12 +40,11 @@
         android:id="@+id/editText3"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_alignStart="@+id/editText2"
-        android:layout_alignTop="@+id/editText2"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="1dp"
         android:layout_marginRight="10dp"
-        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:background="@color/colorLogin"
         android:ems="10"
         android:hint="@string/app_password"
@@ -58,9 +57,9 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
         android:text="@string/app_login"
         android:textColor="@color/colorLogin"
         android:textSize="16sp" />
@@ -73,7 +72,7 @@
         android:textColor="@color/colorNotAccount"
         android:textSize="14sp"
         android:autoLink="all"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
         />
 
@@ -85,7 +84,7 @@
         android:textColor="@color/colorNotAccount"
         android:autoLink="all"
         android:textSize="14sp"
-        android:layout_marginLeft="290dp"
+        android:layout_marginStart="290dp"
         android:layout_marginTop="-20dp" />
 
 
