@@ -8,4 +8,7 @@
     <color name="colorLoginButton">#393d3e</color>
     <color name="colorNotAccount">#768dac</color>
     <color name="colorBackground">#0d1114</color>
+    <color name="colorTextBlue">#1081e0</color>
+    <color name="colorTextGray">#7f7f7f</color>
+    <color name="colorTransparent">#88333333</color>
 </resources>

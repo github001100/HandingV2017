@@ -6,4 +6,10 @@
     <string name="app_ForgotPassword">忘记密码?</string>
     <string name="app_notAccount">没有账号?</string>
     <string name="app_overPage">大汉无疆     问鼎中华</string>
+    <string name="app_Home">首页</string>
+    <string name="app_News">资讯</string>
+    <string name="app_Me">我的</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

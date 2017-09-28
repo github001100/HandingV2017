@@ -1,11 +1,15 @@
 package com.hdmes.handingv2017;
 
+import android.content.Intent;
 import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.*;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
     private TextView txt3,txt4;
@@ -29,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
                 if(edittxt2.length()==0 || edittxt3.length()==0)
                 {
                     Toast.makeText(getApplicationContext(),"请输入账号或密码！", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Intent intent = new Intent(MainActivity.this,HomeActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
             }
         });
