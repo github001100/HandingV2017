@@ -1,82 +1,132 @@
 package com.hdmes.handingv2017;
 
 
-
-
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class HomeActivity extends AppCompatActivity  {
-//    private RadioGroup rpTab;
-//    private RadioButton rbHome,rbNews,rbMe;
-//    private HomeFragment fg1;
-//    private NewsFragment fg2;
-//    private MeFragment fg3;
+import com.hdmes.handingv2017.eventmessage.EventMessage;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+public class HomeActivity extends AppCompatActivity {
+    private static final String TAG = "vivi";
+    @Bind(R.id.fragment_container)
+    FrameLayout mContent;
+    @Bind(R.id.rd_menu_home)
+    RadioButton mRbHome;
+    @Bind(R.id.rd_menu_News)
+    RadioButton mRbShop;
+    @Bind(R.id.rd_menu_Me)
+    RadioButton mRbMessage;
+    @Bind(R.id.rd_group)
+    RadioGroup  mRgTools;
+    private Fragment[] mFragments;
+    private int mIndex;
     protected Toast toast = null;//定义一个吐司
     private long mExitTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        //bindView();
+        ButterKnife.bind(this);
+        EventBus.getDefault().register(this);
+
+        initFragment();
     }
-//    private void bindView() {
-//        rpTab = (RadioGroup)findViewById(R.id.rd_group);
-//        rpTab.setOnCheckedChangeListener(this);
-//
-//        rbHome = (RadioButton)findViewById(R.id.rd_menu_home);
-//        rbNews = (RadioButton)findViewById(R.id.rd_menu_News);
-//        rbMe = (RadioButton)findViewById(R.id.rd_menu_Me);
-//        rbHome.setChecked(true);
-//    }
-//    public void hideAllFragment(FragmentTransaction transaction){
-//        if(fg1!=null){
-//            transaction.hide(fg1);
-//        }
-//        if(fg2!=null){
-//            transaction.hide(fg2);
-//        }
-//        if(fg3!=null){
-//            transaction.hide(fg3);
-//        }
-//    }
-//    @Override
-//    public void onCheckedChanged(RadioGroup group, int checkedId) {
-//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//        hideAllFragment(transaction);
-//        switch (checkedId){
-//            case R.id.rd_menu_home:
-//                if(fg1==null){
-//                    fg1 = new HomeFragment();
-//                    transaction.add(R.id.fragment_container,fg1);
-//                }else{
-//                    transaction.show(fg1);
-//                }
-//                break;
-//            case R.id.rd_menu_News:
-//                if(fg2==null){
-//                    fg2 = new NewsFragment();
-//                    transaction.add(R.id.fragment_container,fg2);
-//                }else{
-//                    transaction.show(fg2);
-//                }
-//                break;
-//            case R.id.rd_menu_Me:
-//                if(fg3==null){
-//                    fg3 = new MeFragment();
-//                    transaction.add(R.id.fragment_container,fg3);
-//                }else{
-//                    transaction.show(fg3);
-//                }
-//                break;
-//        }
-//        transaction.commit();
-//    }
+    private void initFragment() {
+        //首页
+        HomeFragment homeFragment =new HomeFragment();
+        //资讯
+        NewsFragment newsFragment =new NewsFragment();
+        //我的
+        MeFragment meFragment =new MeFragment();
+        //添加到数组
+        mFragments = new Fragment[]{homeFragment,newsFragment,meFragment};
+        //开启事务
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        //添加首页
+        ft.add(R.id.fragment_container,homeFragment).commit();
+        //默认设置为第0个
+        setIndexSelected(0);
+    }
+
+    private void setIndexSelected(int index) {
+        if(mIndex==index){
+            return;
+        }
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        //隐藏
+        ft.hide(mFragments[mIndex]);
+        //判断是否添加
+        if(!mFragments[index].isAdded()){
+            ft.add(R.id.fragment_container,mFragments[index]).show(mFragments[index]);
+        }else {
+            ft.show(mFragments[index]);
+        }
+        ft.commit();
+        //再次赋值
+        mIndex=index;
+    }
+    @OnClick({R.id.rd_menu_home, R.id.rd_menu_News, R.id.rd_menu_Me})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.rd_menu_home:
+                setIndexSelected(0);
+                break;
+            case R.id.rd_menu_News:
+                setIndexSelected(1);
+                break;
+            case R.id.rd_menu_Me:
+                setIndexSelected(2);
+                break;
+        }
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
+        EventBus.getDefault().unregister(this);
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void setGoIndex(EventMessage eventMessage){
+        Log.d(TAG, "setGoIndex: "+eventMessage.getTag());
+        if(eventMessage!=null){
+            int tag = eventMessage.getTag();
+            if(tag== EventMessage.EventMessageAction.TAG_GO_MAIN){
+                mRbHome.performClick();
+                setIndexSelected(0);
+            }else if(tag== EventMessage.EventMessageAction.TAG_GO_SHOPCART){
+                mRbShop.performClick();
+                setIndexSelected(1);
+            }else if(tag== EventMessage.EventMessageAction.TAG_GO_MESSAGE){
+                mRbMessage.performClick();
+                setIndexSelected(2);
+            }
+        }
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // mRbHome.performClick();
+    }
 @Override
 public boolean onKeyDown(int keyCode, KeyEvent event) {
     //判断用户是否点击了“返回键”
@@ -104,3 +154,4 @@ public boolean onKeyDown(int keyCode, KeyEvent event) {
     return super.onKeyDown(keyCode, event);
 }
 }
+

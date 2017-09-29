@@ -1,27 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.hdmes.handingv2017.HomeActivity">
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/swatchlogo"
         android:background="@color/colorBackground"
-        app:srcCompat="@drawable/swatchlogo" />
 
+        />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imageView3"
+        android:layout_weight="1"
+        android:background="@color/colorTransparent"
+        android:layout_above="@+id/linearLayout">
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tab_menu_bg"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
     <RadioGroup
         android:id="@+id/rd_group"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorLogin"
         android:orientation="horizontal" >
 
         <RadioButton
@@ -29,38 +48,26 @@
             style="@style/tab_menu_item"
             android:drawableTop="@drawable/tab_menu_home"
             android:text="@string/app_Home"
+            android:textColor="@drawable/tab_menu_home_text"
+            android:checked="true"
             />
         <RadioButton
             android:id="@+id/rd_menu_News"
             style="@style/tab_menu_item"
             android:drawableTop="@drawable/tab_menu_mews"
             android:text="@string/app_News"
+            android:textColor="@drawable/tab_menu_mews_text"
+            android:checked="false"
             />
         <RadioButton
             android:id="@+id/rd_menu_Me"
             style="@style/tab_menu_item"
             android:drawableTop="@drawable/tab_menu_me"
+            android:textColor="@drawable/tab_menu_me_text"
             android:text="@string/app_Me"
+            android:checked="false"
             />
     </RadioGroup>
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/rd_group"
-        android:layout_below="@id/imageView3"
-        android:background="@color/colorLogin">
-    </FrameLayout>
+</LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp"
-        app:srcCompat="@drawable/profile"
-        android:layout_above="@+id/fragment_container"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="32dp" />
-</RelativeLayout>
+</LinearLayout>

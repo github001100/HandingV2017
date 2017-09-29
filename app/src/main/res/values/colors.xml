@@ -10,5 +10,5 @@
     <color name="colorBackground">#0d1114</color>
     <color name="colorTextBlue">#1081e0</color>
     <color name="colorTextGray">#7f7f7f</color>
-    <color name="colorTransparent">#88333333</color>
+    <color name="colorTransparent">#f4f8fb</color>
 </resources>
