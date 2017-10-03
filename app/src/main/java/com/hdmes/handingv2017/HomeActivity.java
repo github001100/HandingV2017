@@ -110,15 +110,12 @@ public class HomeActivity extends AppCompatActivity {
         Log.d(TAG, "setGoIndex: "+eventMessage.getTag());
         if(eventMessage!=null){
             int tag = eventMessage.getTag();
-            if(tag== EventMessage.EventMessageAction.TAG_GO_MAIN){
+            if(tag== EventMessage.EventMessageAction.TAG_GO_INFO){
                 mRbHome.performClick();
                 setIndexSelected(0);
-            }else if(tag== EventMessage.EventMessageAction.TAG_GO_SHOPCART){
+            }else if(tag== EventMessage.EventMessageAction.TAG_GO_CRANEINFO){
                 mRbShop.performClick();
                 setIndexSelected(1);
-            }else if(tag== EventMessage.EventMessageAction.TAG_GO_MESSAGE){
-                mRbMessage.performClick();
-                setIndexSelected(2);
             }
         }
     }

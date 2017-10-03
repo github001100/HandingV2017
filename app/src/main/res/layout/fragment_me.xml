@@ -30,7 +30,7 @@
         android:textColor="@color/colorText" />
 
     <Button
-        android:id="@+id/btnGoHome"
+        android:id="@+id/btnGoinfo"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/me_button_style"
@@ -43,7 +43,7 @@
         />
 
     <Button
-        android:id="@+id/btnGoShopCart"
+        android:id="@+id/btnGocraneinfo"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/me_button_style"

@@ -28,8 +28,8 @@ public class EventMessage {
 
     public static class EventMessageAction {
 
-        public final static int TAG_GO_MAIN     = 1;//跳转主页
-        public final static int TAG_GO_SHOPCART = 2;//资讯
-        public final static int TAG_GO_MESSAGE  = 3;//我的
+        public final static int TAG_GO_INFO    = 1;//跳转个人信息
+        public final static int TAG_GO_CRANEINFO = 2;//设备信息
+        //public final static int TAG_GO_MESSAGE  = 3;//我的
     }
 }

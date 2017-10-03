@@ -21,10 +21,10 @@ public class MeFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    @Bind(R.id.btnGoHome)
-    Button mBtnGoHome;
-    @Bind(R.id.btnGoShopCart)
-    Button mBtnGoShopCart;
+    @Bind(R.id.btnGoinfo)
+    Button mBtnGoinfo;
+    @Bind(R.id.btnGocraneinfo)
+    Button mBtnGocraneinfo;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -60,19 +60,20 @@ public class MeFragment extends Fragment {
         }
     }
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_me, container, false);
+        View view= inflater.inflate(R.layout.fragment_me, container, false);
+        ButterKnife.bind(this, view);
+        return view;
     }
-    @OnClick({R.id.btnGoHome, R.id.btnGoShopCart})
+    @OnClick({R.id.btnGoinfo, R.id.btnGocraneinfo})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btnGoHome:
-                goSelect(EventMessage.EventMessageAction.TAG_GO_MAIN);
+            case R.id.btnGoinfo:
+                goSelect(EventMessage.EventMessageAction.TAG_GO_INFO);
                 break;
-            case R.id.btnGoShopCart:
-                goSelect(EventMessage.EventMessageAction.TAG_GO_SHOPCART);
+            case R.id.btnGocraneinfo:
+                goSelect(EventMessage.EventMessageAction.TAG_GO_CRANEINFO);
                 break;
         }
     }
