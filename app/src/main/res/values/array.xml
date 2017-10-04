@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cranetype">
+        <item>新式单梁</item>
+        <item>新式双梁</item>
+        <item>新式电悬</item>
+        <item>单梁葫芦</item>
+        <item>双梁葫芦</item>
+    </string-array>
+</resources>
