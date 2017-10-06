@@ -1,10 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="cranetype">
-        <item>新式单梁</item>
-        <item>新式双梁</item>
-        <item>新式电悬</item>
+        <item>(LDHE)新式单梁</item>
+        <item>(LHE)新式双梁</item>
+        <item>(LEX)新式电悬</item>
         <item>单梁葫芦</item>
         <item>双梁葫芦</item>
+    </string-array>
+    <string-array name="cranespan">
+        <item>10.5-13.5m</item>
+        <item>13.5-16.5m</item>
+        <item>16.5-19.5m</item>
+        <item>19.5-22.5m</item>
+        <item>22.5-25.5m</item>
+        <item>25.5-28.5m</item>
+        <item>28.5-31.5m</item>
+    </string-array>
+    <string-array name="xscraneload">
+        <item>1t</item>
+        <item>3.2t</item>
+        <item>5t</item>
+        <item>8t</item>
+        <item>10t</item>
+        <item>16t</item>
+        <item>20t</item>
+    </string-array>
+    <string-array name="xdcraneload">
+        <item>5t</item>
+        <item>10t</item>
+        <item>20t</item>
+        <item>25t</item>
+        <item>32t</item>
+        <item>40t</item>
+        <item>50t</item>
+    </string-array>
+    <string-array name="craneclass">
+        <item>A3</item>
+        <item>A4</item>
+        <item>A5</item>
+        <item>A6</item>
+    </string-array>
+    <string-array name="craneheight">
+        <item>6m</item>
+        <item>9m</item>
+        <item>12m</item>
+        <item>15m</item>
+        <item>18m</item>
     </string-array>
 </resources>
