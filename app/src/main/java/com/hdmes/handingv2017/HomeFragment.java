@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 
 
 public class HomeFragment extends Fragment {
-    private ImageButton baojia;
+    private ImageButton baojia,jisuan;
     public HomeFragment() {
 
     }
@@ -35,12 +35,22 @@ public class HomeFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
+        //报价页面显示
         baojia = (ImageButton) getActivity().findViewById(R.id.imageButton);
         baojia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent1=new Intent(getActivity(),BaojiaActivity.class);
                 startActivity(intent1);
+            }
+        });
+        //计算页面显示
+        jisuan=(ImageButton)getActivity().findViewById(R.id.imageButton2);
+        jisuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2=new Intent(getActivity(), JisuanActivity.class);
+                startActivity(intent2);
             }
         });
     }

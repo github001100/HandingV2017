@@ -23,7 +23,8 @@
 
         <uses-permission android:name="android.permission.INTERNET" />
 
-        <activity android:name=".BaojiaActivity" ></activity>
+        <activity android:name=".BaojiaActivity" />
+        <activity android:name=".JisuanActivity"></activity>
     </application>
 
 </manifest>

@@ -47,4 +47,11 @@
         <item>15m</item>
         <item>18m</item>
     </string-array>
+    <string-array name="jisuantype">
+        <item>截面特性</item>
+        <item>刚度计算</item>
+        <item>强度计算</item>
+        <item>轴承计算</item>
+        <item>车轮计算</item>
+    </string-array>
 </resources>
