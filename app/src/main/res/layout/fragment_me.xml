@@ -6,6 +6,7 @@
     android:background="@color/colorTransparent"
     tools:context="com.hdmes.handingv2017.MeFragment"
     android:weightSum="1"
+    android:id="@+id/mefragment"
     android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
@@ -26,7 +27,7 @@
         android:layout_marginTop="-20dp"
         android:background="@color/colorLogin"
         android:gravity="center"
-        android:text="Handing用户：zefllj"
+        android:text="Handing用户："
         android:textColor="@color/colorText" />
 
     <Button

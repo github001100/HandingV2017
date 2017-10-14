@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorTransparent"
     android:orientation="vertical"
+    android:id="@+id/homefragment"
     tools:context="com.hdmes.handingv2017.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -83,7 +84,7 @@
             android:id="@+id/imageButton13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="1.37"
             android:background="@drawable/home_imagebuttonsingle_bg"
             app:srcCompat="@mipmap/women" />
 
@@ -102,6 +103,7 @@
             android:layout_weight="1"
             android:background="@color/colorTransparent"
             app:srcCompat="@mipmap/kongbai" />
+
     </LinearLayout>
 
 </LinearLayout>

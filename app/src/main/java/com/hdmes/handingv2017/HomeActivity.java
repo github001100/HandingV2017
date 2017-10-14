@@ -1,6 +1,7 @@
 package com.hdmes.handingv2017;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -40,6 +41,10 @@ public class HomeActivity extends AppCompatActivity {
     private int mIndex;
     protected Toast toast = null;//定义一个吐司
     private long mExitTime;
+    private HomeFragment homeFragment;
+    private NewsFragment newsFragment;
+    private MeFragment meFragment;
+    private String ct;//定义中间变量用于记录用户登录名
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,16 +52,34 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
         EventBus.getDefault().register(this);
-
+        //接收MainActivity传递的count
+        Intent intent=getIntent();
+        ct=intent.getStringExtra("user");
+        //传递用户登录账户参数
+        //getCount();
+        //设置首页
         initFragment();
     }
+//    //设置HomeFragment与MeFragment相互通讯
+//    private void init(){
+//        FragmentManager fragmentManager=getSupportFragmentManager();
+//        HomeFragment homeFragment=new HomeFragment();
+//        MeFragment meFragment=new MeFragment();
+//        //将HomeFragment的target目标设成MeFragment，这样可以单向通讯
+//        homeFragment.setTargetFragment(meFragment,HomeFragment.requestCode);
+//    }
+      //设置函数用于MeFragment
+     public String getData(){
+        return ct;
+     }
+    //将homeFragment设置为默认显示
     private void initFragment() {
         //首页
-        HomeFragment homeFragment =new HomeFragment();
+        homeFragment =new HomeFragment();
         //资讯
-        NewsFragment newsFragment =new NewsFragment();
+        newsFragment =new NewsFragment();
         //我的
-        MeFragment meFragment =new MeFragment();
+        meFragment =new MeFragment();
         //添加到数组
         mFragments = new Fragment[]{homeFragment,newsFragment,meFragment};
         //开启事务
@@ -66,7 +89,7 @@ public class HomeActivity extends AppCompatActivity {
         //默认设置为第0个
         setIndexSelected(0);
     }
-
+    //根据index显示或隐藏Fragment
     private void setIndexSelected(int index) {
         if(mIndex==index){
             return;
@@ -85,6 +108,7 @@ public class HomeActivity extends AppCompatActivity {
         //再次赋值
         mIndex=index;
     }
+    //按钮单击切换Fragment
     @OnClick({R.id.rd_menu_home, R.id.rd_menu_News, R.id.rd_menu_Me})
     public void onClick(View view) {
         switch (view.getId()) {
@@ -98,6 +122,14 @@ public class HomeActivity extends AppCompatActivity {
                 setIndexSelected(2);
                 break;
         }
+    }
+    //获取用户登录账户
+    private void getCount(){
+        FragmentManager fragmentManager=getSupportFragmentManager();
+        FragmentTransaction transaction=fragmentManager.beginTransaction();
+        MeFragment meFragment=MeFragment.newInstance(ct,"");
+        transaction.add(R.id.fragment_container,meFragment);
+        transaction.commit();
     }
     @Override
     protected void onDestroy() {

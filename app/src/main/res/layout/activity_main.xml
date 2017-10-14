@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorBackground"
-
+    android:id="@+id/mainactivity"
     tools:context="com.hdmes.handingv2017.MainActivity"
     android:weightSum="1">
 
@@ -89,6 +89,5 @@
         android:textSize="14sp"
         android:layout_marginLeft="290dp"
         android:layout_marginTop="-20dp" />
-
 
 </LinearLayout>
