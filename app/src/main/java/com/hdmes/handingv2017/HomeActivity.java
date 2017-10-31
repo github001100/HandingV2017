@@ -123,14 +123,6 @@ public class HomeActivity extends AppCompatActivity {
                 break;
         }
     }
-    //获取用户登录账户
-    private void getCount(){
-        FragmentManager fragmentManager=getSupportFragmentManager();
-        FragmentTransaction transaction=fragmentManager.beginTransaction();
-        MeFragment meFragment=MeFragment.newInstance(ct,"");
-        transaction.add(R.id.fragment_container,meFragment);
-        transaction.commit();
-    }
     @Override
     protected void onDestroy() {
         super.onDestroy();

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@mipmap/loginback"
+    android:id="@+id/mainactivity"
+    tools:context="com.hdmes.handingv2017.MainActivity"
+    android:weightSum="1">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp"
+
+        android:contentDescription="@null"
+        android:layout_weight="0.33" />
+
+    <EditText
+        android:id="@+id/editText_username"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="200dp"
+        android:background="@color/colorLogin"
+        android:ems="10"
+        android:hint="@string/app_account"
+        android:inputType="textPersonName"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:text="handing"
+        android:textColor="@color/colorText"
+        android:textColorHint="@color/colorText"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/editText2_userpass"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/colorLogin"
+        android:ems="10"
+        android:hint="@string/app_password"
+        android:inputType="textPassword"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:text="0000"
+        android:textColor="@color/colorText"
+        android:textColorHint="@color/colorText"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/app_login"
+        android:textColor="@color/colorLogin"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_ForgotPassword"
+        android:textColor="@color/colorNotAccount"
+        android:textSize="14sp"
+        android:autoLink="all"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_notAccount"
+        android:textColor="@color/colorNotAccount"
+        android:autoLink="all"
+        android:textSize="14sp"
+        android:layout_marginLeft="290dp"
+        android:layout_marginTop="-20dp" />
+
+</LinearLayout>
