@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorTransparent"
+    tools:context="com.hdmes.handingv2017.HomeActivity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:background="#3f7de1"
+        app:srcCompat="@drawable/titlehanding"
+         />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imageView3"
+        android:layout_weight="1"
+        android:background="@color/colorTransparent"
+        android:layout_above="@+id/linearLayout">
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tab_menu_bg"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
+    <RadioGroup
+        android:id="@+id/rd_group"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rd_menu_home"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_menu_home"
+            android:text="@string/app_Home"
+            android:textColor="@drawable/tab_menu_home_text"
+            android:checked="true"
+            />
+        <RadioButton
+            android:id="@+id/rd_menu_News"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_menu_mews"
+            android:text="@string/app_News"
+            android:textColor="@drawable/tab_menu_mews_text"
+            android:checked="false"
+            />
+        <RadioButton
+            android:id="@+id/rd_menu_Me"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_menu_me"
+            android:textColor="@drawable/tab_menu_me_text"
+            android:text="@string/app_Me"
+            android:checked="false"
+            />
+    </RadioGroup>
+</LinearLayout>
+
+</LinearLayout>

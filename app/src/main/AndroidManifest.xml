@@ -2,20 +2,36 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hdmes.handingv2017">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:allowBackup="true"
-        android:icon="@drawable/h140"
+        android:icon="@drawable/h128"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".OverPageActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".BaojiaActivity" />
+        <activity android:name=".MyActivitys.ModifyActivity" />
+        <activity android:name=".JisuanActivity" />
+        <activity
+            android:name=".MyActivitys.VideoActivity"
+            android:label="@string/title_activity_video"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".SignUpActivity"></activity>
     </application>
 
 </manifest>

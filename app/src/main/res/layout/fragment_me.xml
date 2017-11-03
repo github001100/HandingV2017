@@ -1,0 +1,109 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTransparent"
+    tools:context="com.hdmes.handingv2017.MeFragment"
+    android:weightSum="1"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:srcCompat="@mipmap/head"
+        android:background="#3f7de1"
+        android:layout_weight="0.24" />
+
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.03"
+        android:layout_marginTop="-20dp"
+        android:background="#3f7de1"
+        android:gravity="center"
+        android:text="登录账户："
+        android:textColor="@color/colorLogin" />
+
+    <Button
+        android:id="@+id/btnGoinfo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/me_button_press"
+        android:textColor="@drawable/me_button_press_textcolor"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:drawableLeft="@mipmap/info"
+        android:drawableRight="@mipmap/enter"
+        android:text="   用户信息"
+        style="?android:attr/borderlessButtonStyle"
+        />
+
+    <Button
+        android:id="@+id/btnGocraneinfo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/me_button_press"
+        android:textColor="@drawable/me_button_press_textcolor"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:drawableLeft="@mipmap/craneinfo"
+        android:drawableRight="@mipmap/enter"
+        android:text="   设备信息"
+        style="?android:attr/borderlessButtonStyle"
+        />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/me_button_press"
+        android:textColor="@drawable/me_button_press_textcolor"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:drawableLeft="@mipmap/sug"
+        android:drawableRight="@mipmap/enter"
+        android:text="   提交建议"
+        style="?android:attr/borderlessButtonStyle"
+        />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/me_button_press"
+        android:textColor="@drawable/me_button_press_textcolor"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:drawableLeft="@mipmap/help"
+        android:drawableRight="@mipmap/enter"
+        android:text="   使用帮助"
+        style="?android:attr/borderlessButtonStyle"
+        />
+
+
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/me_button_press"
+        android:textColor="@drawable/me_button_press_textcolor"
+        android:text="用户登录"
+        style="?android:attr/borderlessButtonStyle"
+        />
+
+    <Button
+        android:id="@+id/button3"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/me_button_press"
+        android:text="退出登录"
+        android:textColor="@drawable/me_button_press_textcolor" />
+
+</LinearLayout>
