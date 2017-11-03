@@ -15,6 +15,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".OverPageActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,16 +23,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".BaojiaActivity" />
-        <activity android:name=".MyActivitys.ModifyActivity" />
-        <activity android:name=".JisuanActivity" />
+        <activity android:name=".MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".HomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".BaojiaActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".MyActivitys.ModifyActivity" android:screenOrientation="portrait" />
+        <activity android:name=".JisuanActivity" android:screenOrientation="portrait"/>
         <activity
             android:name=".MyActivitys.VideoActivity"
             android:label="@string/title_activity_video"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".SignUpActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ShujuActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".PeiJianActivity" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

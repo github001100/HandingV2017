@@ -146,8 +146,39 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+        //没有账号单击事件
+        TextView forgetps=(TextView) findViewById(R.id.textView4);
+        forgetps.setOnClickListener(new TextView.OnClickListener()
+        {
+            public void onClick(View view){
+                ForgetPassPress();
+            }
+        });
+        //忘记密码单击事件
+        TextView noaccount=(TextView) findViewById(R.id.textView3);
+        noaccount.setOnClickListener(new TextView.OnClickListener()
+        {
+            public void onClick(View view){
+                NoAccountPress();
+            }
+        });
     }
-
+    /**
+     *
+     *忘记密码单击事件
+     **/
+    public void ForgetPassPress(){
+        toast=Toast.makeText(context, "暂不开放注册！", Toast.LENGTH_SHORT);
+        toast.show();
+    }
+    /**
+     *没有账号单击事件
+     *
+     **/
+    public void NoAccountPress(){
+        toast=Toast.makeText(context, "暂无法找回密码！", Toast.LENGTH_SHORT);
+        toast.show();
+    }
     /**
      * Md5 加密函数
      *

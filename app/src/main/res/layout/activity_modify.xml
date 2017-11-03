@@ -6,18 +6,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1"
+    android:background="@color/colorTransparent"
     tools:context="com.hdmes.handingv2017.BaojiaActivity">
 
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#75baff"
+        android:background="#3f7de1"
         app:srcCompat="@mipmap/title_baoxiu" />
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        >
 
         <TableRow
             android:layout_width="match_parent"
@@ -38,66 +42,83 @@
                 android:id="@+id/spinner"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
-
                 android:dropDownWidth="match_parent"
                 android:entries="@array/data"
-                android:spinnerMode="dropdown" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+                android:spinnerMode="dropdown"
+                android:background="@drawable/spinner"
+                android:popupBackground="#ffffff"
+                />
         </TableRow>
 
     </TableLayout>
+
+    <RadioButton
+        android:id="@+id/radioButton3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="30dp"
+        android:button="@drawable/radiobutton"
+        android:checked="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="2dp"
+        android:text="请选择故障信息"
+        android:textColor="@color/colorText"
+        android:textSize="14sp" />
+
+    <Spinner
+        android:id="@+id/spinner_baoxiu"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/spinner"
+        android:popupBackground="#ffffff" />
+
+    <RadioButton
+        android:id="@+id/radioButton4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="30dp"
+        android:button="@drawable/radiobutton"
+        android:checked="false"
+        android:gravity="center_vertical"
+        android:paddingLeft="2dp"
+        android:text="请输入故障信息"
+        android:textColor="@color/colorText"
+        android:textSize="14sp" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
         android:layout_weight="0.35"
         android:background="@drawable/edittext_style"
         android:ems="100"
-        android:hint="请填写设备具体故障信息"
         android:gravity="top"
+        android:hint="请填写设备具体故障信息 ..."
         android:inputType="textMultiLine"
-        android:paddingLeft="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
         android:textColor="@color/colorText"
         android:textColorHint="@color/colorText"
-        android:textSize="16sp" />
+        android:textSize="14sp" />
 
     <EditText
         android:id="@+id/textView14"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
         android:gravity="center_vertical"
         android:hint="备注"

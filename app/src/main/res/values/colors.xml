@@ -11,4 +11,7 @@
     <color name="colorTextBlue">#1081e0</color>
     <color name="colorTextGray">#7f7f7f</color>
     <color name="colorTransparent">#f4f8fb</color>
+    <color name="colorLoginBckFalse">#819ef6</color>
+    <color name="colorLoginBckTrue">#4f6aea</color>
+    <color name="colorTitle">#3f7de1</color>
 </resources>
