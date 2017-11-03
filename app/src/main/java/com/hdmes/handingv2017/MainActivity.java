@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.net.ConnectivityManager;
-import android.net.http.HttpsConnection;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
