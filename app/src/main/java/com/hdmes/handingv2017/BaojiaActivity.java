@@ -6,17 +6,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 public class BaojiaActivity extends AppCompatActivity {
 //    private TextView text;
-    private Spinner type,load,span,workclass,height;
+    private Spinner type,load,workclass,height;
+    private EditText span;
+    private CheckBox sijishi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_baojia);
 
+        sijishi=(CheckBox) findViewById(R.id.checkBox3) ;
+        span=(EditText) findViewById(R.id.editText3);
         //初始化控件
         type=(Spinner)findViewById(R.id.spinner);
         //绑定数据源
@@ -45,6 +51,14 @@ public class BaojiaActivity extends AppCompatActivity {
                 adapter.setDropDownViewResource(R.layout.dropdown_stytle);
                 //绑定Adapter到控件
                 load.setAdapter(adapter);
+                if(arg3==3){
+                    span.setEnabled(false);//跨度不可用
+                    sijishi.setVisibility(View.INVISIBLE);
+                }
+                else {
+                    span.setEnabled(true);//跨度可用
+                    sijishi.setVisibility(View.VISIBLE);
+                }
             }
             if(arg3==1 ||arg3==4){
                 //建立Adapter并绑定数据源
@@ -52,6 +66,14 @@ public class BaojiaActivity extends AppCompatActivity {
                 adapter.setDropDownViewResource(R.layout.dropdown_stytle);
                 //绑定Adapter到控件
                 load.setAdapter(adapter);
+                if(arg3==4){
+                    span.setEnabled(false);//跨度不可用
+                    sijishi.setVisibility(View.INVISIBLE);
+                }
+                else {
+                    span.setEnabled(true);//跨度可用
+                    sijishi.setVisibility(View.VISIBLE);
+                }
             }
 
             load.setOnItemSelectedListener(new SpinnerXMLLoadSelectedListener());
@@ -61,6 +83,7 @@ public class BaojiaActivity extends AppCompatActivity {
         }
 
     }
+    /*
     //使用XML形式操作
     class SpinnerXMLLoadSelectedListener implements AdapterView.OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long arg3) {
@@ -83,8 +106,9 @@ public class BaojiaActivity extends AppCompatActivity {
         }
 
     }
+    */
     //使用XML形式操作
-    class SpinnerXMLSpanSelectedListener implements AdapterView.OnItemSelectedListener {
+    class SpinnerXMLLoadSelectedListener implements AdapterView.OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long arg3) {
             ((TextView) arg0.getChildAt(0)).setTextColor(Color.rgb(150,150,150));
 //            ((TextView) arg0.getChildAt(0)).setTextSize(14);

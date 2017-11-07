@@ -14,4 +14,5 @@
     <color name="colorLoginBckFalse">#819ef6</color>
     <color name="colorLoginBckTrue">#4f6aea</color>
     <color name="colorTitle">#3f7de1</color>
+    <color name="colorHint">#c8c8c8</color>
 </resources>

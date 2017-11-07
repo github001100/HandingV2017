@@ -61,15 +61,14 @@
                 android:id="@+id/textView18"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:clickable="true"
-                android:layout_marginTop="10dp"
                 android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:gravity="center"
                 android:text="设备介绍"
                 android:textColor="@drawable/boajia_textcolor"
                 android:textSize="12sp"
-                android:gravity="center"
-                android:visibility="gone"
-                />
+                android:visibility="gone" />
 
         </TableRow>
 
@@ -103,14 +102,14 @@
                 android:id="@+id/textView20"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:visibility="gone"
-                android:clickable="true"
-                android:layout_marginTop="10dp"
                 android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="帮我选择"
                 android:textColor="@drawable/boajia_textcolor"
                 android:textSize="12sp"
-                android:gravity="center"
-                android:text="帮我选择" />
+                android:visibility="gone" />
         </TableRow>
 
         <TableRow
@@ -137,20 +136,36 @@
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/spinner"
-                android:popupBackground="#ffffff" />
+                android:popupBackground="#ffffff"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="270dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="5dp"
+                android:background="@drawable/edittext_style"
+                android:ems="10"
+                android:hint="请输入跨度（m）"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorText"
+                android:textColorHint="@color/colorHint"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/textView22"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
                 android:layout_marginRight="5dp"
-                android:textColor="@drawable/boajia_textcolor"
-                android:textSize="12sp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="跨度介绍"
-                android:visibility="gone"
-                />
+                android:textColor="@drawable/boajia_textcolor"
+                android:textSize="12sp"
+                android:visibility="gone" />
 
 
         </TableRow>
@@ -185,15 +200,14 @@
                 android:id="@+id/textView21"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:clickable="true"
-                android:layout_marginTop="10dp"
                 android:layout_marginRight="5dp"
-                android:textColor="@drawable/boajia_textcolor"
-                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
                 android:gravity="center"
                 android:text="帮我选择"
-                android:visibility="gone"
-                />
+                android:textColor="@drawable/boajia_textcolor"
+                android:textSize="12sp"
+                android:visibility="gone" />
 
         </TableRow>
 
@@ -227,12 +241,12 @@
                 android:id="@+id/textView23"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
                 android:layout_marginRight="5dp"
-                android:textColor="@drawable/boajia_textcolor"
-                android:textSize="12sp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="高度介绍"
+                android:textColor="@drawable/boajia_textcolor"
+                android:textSize="12sp"
                 android:visibility="gone" />
 
         </TableRow>
@@ -267,9 +281,9 @@
 
             <CheckBox
                 android:id="@+id/checkBox2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-30dp"
+                android:layout_marginLeft="-10dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginTop="10dp"
                 android:button="@drawable/checkbox_style"
@@ -282,7 +296,7 @@
                 android:id="@+id/checkBox3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="-210dp"
                 android:layout_marginTop="10dp"
                 android:button="@drawable/checkbox_style"
                 android:gravity="center_vertical"
@@ -310,14 +324,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
-                android:paddingLeft="2dp"
+                android:button="@drawable/radiobutton"
+                android:checked="true"
                 android:gravity="center_vertical"
+                android:paddingLeft="2dp"
                 android:text="标准"
                 android:textColor="@color/colorText"
-                android:textSize="14sp"
-                android:checked="true"
-                android:button="@drawable/radiobutton"
-                />
+                android:textSize="14sp" />
 
         </TableRow>
     </TableLayout>
@@ -336,9 +349,8 @@
         android:paddingLeft="5dp"
         android:hint="您选择的设备总价为..."
         android:drawableRight="@drawable/totalprice"
-
         android:textColor="@color/colorText"
-        android:textColorHint="@color/colorText"
+        android:textColorHint="@color/colorHint"
         android:textSize="14sp"
         />
 
