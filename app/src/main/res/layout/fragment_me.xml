@@ -67,7 +67,7 @@
         android:paddingLeft="10dp"
         android:drawableLeft="@mipmap/sug"
         android:drawableRight="@mipmap/enter"
-        android:text="   提交建议"
+        android:text="   意见反馈"
         style="?android:attr/borderlessButtonStyle"
         />
 

@@ -2,9 +2,9 @@
 <resources>
 
     <string-array name="cranetype">
-        <item>(LDHE)新式单梁</item>
-        <item>(LHE)新式双梁</item>
-        <item>(LEX)新式电悬</item>
+        <item>新式单梁</item>
+        <item>新式双梁</item>
+        <item>新式电悬</item>
         <item>单梁葫芦</item>
         <item>双梁葫芦</item>
     </string-array>
@@ -49,10 +49,20 @@
         <item>18m</item>
     </string-array>
     <string-array name="jisuantype">
-        <item>截面特性</item>
         <item>刚度计算</item>
         <item>强度计算</item>
-        <item>轴承计算</item>
+        <item>轮压计算</item>
         <item>车轮计算</item>
+    </string-array>
+    <string-array name="craneQue">
+        <item>起重机无法启动？</item>
+        <item>遥控器反应迟钝？</item>
+        <item>限位器故障？</item>
+        <item>电机无法启动？</item>
+        <item>大车运行机构故障？</item>
+        <item>小车运行机构故障？</item>
+        <item>起升机构故障?</item>
+        <item>PLC模块故障？</item>
+        <item>空调无法启动？</item>
     </string-array>
 </resources>

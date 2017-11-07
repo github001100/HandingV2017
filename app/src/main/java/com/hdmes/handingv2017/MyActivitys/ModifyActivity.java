@@ -3,15 +3,18 @@ package com.hdmes.handingv2017.MyActivitys;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -26,9 +29,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
-import android.os.Handler;
-import android.os.Message;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -36,9 +36,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ModifyActivity extends AppCompatActivity {
-    private Spinner cranes;
+    private Spinner cranes,cranesque;
     private TextView tv;
-    private String[] typeItems;
+    private String[] typeItems,craneq;
     private String url = "http://192.168.0.188:8088/SystemManage/CraneGZ0/CraneModifyAdd";//服务器接口地址
     protected EditText h_content;
     private ProgressDialog progressDialog;
@@ -76,6 +76,7 @@ public class ModifyActivity extends AppCompatActivity {
         str = intent.getStringExtra("username");
         hname = str;//提报人
         cranes = (Spinner) findViewById(R.id.spinner);
+        cranesque=(Spinner) findViewById(R.id.spinner_baoxiu);
         h_content = (EditText) findViewById(R.id.editText);
         tv = (TextView) findViewById(R.id.textView14);
         //设置弹出框提示
@@ -86,6 +87,9 @@ public class ModifyActivity extends AppCompatActivity {
         progressDialog.setMessage("Loading...");
 
         Button button5 = (Button) findViewById(R.id.button5);
+        final RadioButton radio1=(RadioButton) findViewById(R.id.radioButton3) ;//选择故障信息
+        final RadioButton radio2=(RadioButton) findViewById(R.id.radioButton4) ;//输入故障信息
+
         //绑定数据源
         typeItems = getResources().getStringArray(R.array.data);
         //建立Adapter并绑定数据源
@@ -94,6 +98,41 @@ public class ModifyActivity extends AppCompatActivity {
         //绑定Adapter到控件
         cranes.setAdapter(adapter);
         cranes.setOnItemSelectedListener(new ModifyActivity.SpinnerXMLSelectedListener());
+
+        //绑定数据源
+        craneq= getResources().getStringArray(R.array.craneQue);
+        //建立Adapter并绑定数据源
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, craneq);
+        adapter1.setDropDownViewResource(R.layout.dropdown_stytle);
+        //绑定Adapter到控件
+        cranesque.setAdapter(adapter1);
+        cranesque.setOnItemSelectedListener(new ModifyActivity.SpinnerXMLSelectedListener1());
+
+        //选择故障信息Radiobutton监听
+        radio1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                radio2.setChecked(false);
+                h_content.setEnabled(false);
+                //h_content.setBackgroundColor(Color.rgb(200,200,200));
+
+                cranesque.setEnabled(true);
+                //cranesque.setBackgroundColor(Color.rgb(255,255,255));
+            }
+        });
+
+        //输入故障信息RadiouButton监听
+        radio2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                radio1.setChecked(false);
+                cranesque.setEnabled(false);
+                //cranesque.setBackgroundColor(Color.rgb(200,200,200));
+
+                h_content.setEnabled(true);
+                //h_content.setBackgroundColor(Color.rgb(255,255,255));
+            }
+        });
 
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -226,7 +265,7 @@ public class ModifyActivity extends AppCompatActivity {
          * @param arg3
          */
         public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long arg3) {
-
+            ((TextView) arg0.getChildAt(0)).setTextColor(Color.rgb(150, 150, 150));
             //tv.setText("识别码：" + typeItems[position]);
             hcraneid = typeItems[position];
         }
@@ -237,4 +276,13 @@ public class ModifyActivity extends AppCompatActivity {
 
     }
 
+    public class SpinnerXMLSelectedListener1 implements AdapterView.OnItemSelectedListener {
+        public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long arg3) {
+            ((TextView) arg0.getChildAt(0)).setTextColor(Color.rgb(150, 150, 150));
+        }
+
+        public void onNothingSelected(AdapterView<?> arg0) {
+
+        }
+    }
 }

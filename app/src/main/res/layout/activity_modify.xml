@@ -16,45 +16,29 @@
         android:background="#3f7de1"
         app:srcCompat="@mipmap/title_baoxiu" />
 
-    <TableLayout
+    <TextView
+        android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        >
+        android:layout_marginTop="10dp"
+        android:text="选择起重设备："
+        android:textColor="@color/colorText"
+        android:textSize="14sp" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="110dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="选择起重设备："
-                android:textColor="@color/colorText"
-                android:textSize="14sp" />
-
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:dropDownWidth="match_parent"
-                android:entries="@array/data"
-                android:spinnerMode="dropdown"
-                android:background="@drawable/spinner"
-                android:popupBackground="#ffffff"
-                />
-        </TableRow>
-
-    </TableLayout>
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.02"
+        android:background="@drawable/spinner"
+        android:dropDownWidth="match_parent"
+        android:entries="@array/data"
+        android:popupBackground="#ffffff"
+        android:spinnerMode="dropdown" />
 
     <RadioButton
         android:id="@+id/radioButton3"
@@ -62,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="30dp"
-        android:button="@drawable/radiobutton"
+        android:button="@drawable/radiobutton_style"
         android:checked="true"
         android:gravity="center_vertical"
         android:paddingLeft="2dp"
@@ -78,6 +62,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/spinner"
+        android:entries="@array/craneQue"
         android:popupBackground="#ffffff" />
 
     <RadioButton
@@ -86,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="30dp"
-        android:button="@drawable/radiobutton"
+        android:button="@drawable/radiobutton_style"
         android:checked="false"
         android:gravity="center_vertical"
         android:paddingLeft="2dp"
@@ -100,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="12dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_weight="0.35"
         android:background="@drawable/edittext_style"
         android:ems="100"
@@ -111,7 +96,9 @@
         android:paddingTop="5dp"
         android:textColor="@color/colorText"
         android:textColorHint="@color/colorText"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:enabled="false"
+        />
 
     <EditText
         android:id="@+id/textView14"

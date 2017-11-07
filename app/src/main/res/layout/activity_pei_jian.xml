@@ -16,57 +16,25 @@
         android:background="@color/colorTitle"
         app:srcCompat="@mipmap/title_peijian" />
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorTransparent"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        android:orientation="horizontal">
 
-        <LinearLayout
+        <ListView
+            android:id="@+id/peijian_lv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent" />
 
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/round_button_style"
+            android:layout_marginTop="400dp"
+            android:layout_marginLeft="290dp"
+            android:text="提交" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/imageView25"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@mipmap/peijian_"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
-
-
-                <TextView
-                    android:id="@+id/textView25"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="320dp"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/colorText"
-                    android:textSize="14sp"
-                    android:text="价格"
-                    />
-
-                <TextView
-                    android:id="@+id/textView29"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="280dp"
-                    android:layout_marginTop="70dp"
-                    android:textColor="@color/colorTitle"
-                    android:textSize="20sp"
-                    android:text="¥2000.00" />
-
-            </RelativeLayout>
-        </LinearLayout>
-    </ScrollView>
+    </RelativeLayout>
 
 </LinearLayout>

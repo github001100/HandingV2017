@@ -1,21 +1,38 @@
 package com.hdmes.handingv2017.MyActivitys;
 
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.MediaController;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 import com.hdmes.handingv2017.R;
 
 public class VideoActivity extends AppCompatActivity {
-
+    private Spinner cranes;
+    private String[] typeItems;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
+
+        cranes=(Spinner) findViewById(R.id.spinner9);
+        //绑定数据源
+        typeItems = getResources().getStringArray(R.array.data);
+        //建立Adapter并绑定数据源
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, typeItems);
+        adapter.setDropDownViewResource(R.layout.dropdown_stytle);
+        //绑定Adapter到控件
+        cranes.setAdapter(adapter);
+        cranes.setOnItemSelectedListener(new VideoActivity.SpinnerXMLSelectedListener());
 
         showView();//调用视频显示
     }
@@ -62,5 +79,15 @@ public class VideoActivity extends AppCompatActivity {
         videoView6.setVideoURI(uri6);
         videoView6.start();
         videoView6.requestFocus();
+    }
+
+    public class SpinnerXMLSelectedListener implements android.widget.AdapterView.OnItemSelectedListener {
+        public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long arg3) {
+            ((TextView) arg0.getChildAt(0)).setTextColor(Color.rgb(150, 150, 150));
+        }
+
+        public void onNothingSelected(AdapterView<?> arg0) {
+
+        }
     }
 }

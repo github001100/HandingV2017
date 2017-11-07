@@ -167,6 +167,14 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        //我们页面显示
+        women.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(getActivity(), ContactActivity.class);
+                startActivity(intent2);
+            }
+        });
         //我们按钮特效
         women.setOnTouchListener(new View.OnTouchListener(){
             public boolean onTouch(View v, MotionEvent event) {

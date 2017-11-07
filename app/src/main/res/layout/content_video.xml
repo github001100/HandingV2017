@@ -88,6 +88,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/spinner"
         android:popupBackground="#ffffff"
+        android:entries="@array/data"
         />
 
 </RelativeLayout>

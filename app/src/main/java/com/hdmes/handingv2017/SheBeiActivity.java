@@ -9,15 +9,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class ShujuActivity extends AppCompatActivity {
+public class SheBeiActivity extends AppCompatActivity {
     private Spinner cranes;
     private String[] typeItems;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shuju);
+        setContentView(R.layout.activity_she_bei);
 
-        cranes=(Spinner) findViewById(R.id.spinner8);
+        cranes=(Spinner) findViewById(R.id.spinner10);
         //绑定数据源
         typeItems = getResources().getStringArray(R.array.data);
         //建立Adapter并绑定数据源
@@ -25,10 +25,10 @@ public class ShujuActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(R.layout.dropdown_stytle);
         //绑定Adapter到控件
         cranes.setAdapter(adapter);
-        cranes.setOnItemSelectedListener(new ShujuActivity.SpinnerXMLSelectedListener());
+        cranes.setOnItemSelectedListener(new SheBeiActivity.SpinnerXMLSelectedListener());
     }
 
-    public class SpinnerXMLSelectedListener implements AdapterView.OnItemSelectedListener {
+    public class SpinnerXMLSelectedListener implements android.widget.AdapterView.OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long arg3) {
             ((TextView) arg0.getChildAt(0)).setTextColor(Color.rgb(150, 150, 150));
         }

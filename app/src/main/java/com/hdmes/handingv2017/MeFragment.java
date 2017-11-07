@@ -1,5 +1,6 @@
 package com.hdmes.handingv2017;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -69,10 +70,47 @@ public class MeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_me, container, false);
+        //设置用户名称
         count_me = (TextView) view.findViewById(R.id.textView5);
         String str = ((HomeActivity) getActivity()).getData();
         count_me.setText(count_me.getText() + str);
-        onClick(view);
+        //用户信息按钮跳转
+        Button userinfo=(Button) view.findViewById(R.id.btnGoinfo);
+        userinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(getActivity(),UserInfoActivity.class);
+                startActivity(intent);
+            }
+        });
+        //建议反馈按钮跳转
+        Button jianyi=(Button) view.findViewById(R.id.button2);
+        jianyi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(getActivity(),JianYiActivity.class);
+                startActivity(intent);
+            }
+        });
+        //设备信息按钮跳转
+        Button shebei =(Button) view.findViewById(R.id.btnGocraneinfo);
+        shebei.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(getActivity(),SheBeiActivity.class);
+                startActivity(intent);
+            }
+        });
+        //使用帮助按钮跳转
+        Button help =(Button) view.findViewById(R.id.button4);
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(getActivity(),HelpActivity.class);
+                startActivity(intent);
+            }
+        });
+        //onClick(view);
         return view;
     }
 
@@ -80,7 +118,9 @@ public class MeFragment extends Fragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnGoinfo:
-                goSelect(EventMessage.EventMessageAction.TAG_GO_INFO);
+                //goSelect(EventMessage.EventMessageAction.TAG_GO_INFO);
+                Intent intent =new Intent(getActivity(),UserInfoActivity.class);
+                startActivity(intent);
                 break;
             case R.id.btnGocraneinfo:
                 goSelect(EventMessage.EventMessageAction.TAG_GO_CRANEINFO);

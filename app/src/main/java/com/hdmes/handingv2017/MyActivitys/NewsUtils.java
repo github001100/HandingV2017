@@ -1,31 +1,26 @@
 package com.hdmes.handingv2017.MyActivitys;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import com.hdmes.handingv2017.R;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
-import org.greenrobot.eventbus.EventBus;
 import org.json.JSONObject;
 
-import butterknife.ButterKnife;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2017/10/24.
@@ -78,6 +73,34 @@ public class NewsUtils {
         return arrayList;
     }
 
+    /**
+     * @param context 上下文环境
+     * @return 备品备件集合
+     */
+    public static ArrayList<NewsBean> getAllPeiJian(Context context) {
+        ArrayList<NewsBean> arrayList = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            NewsBean newsBean1 = new NewsBean();
+            newsBean1.title = "1200.00";
+            newsBean1.des = "参数：";
+            newsBean1.icon = context.getResources().getDrawable(R.mipmap.peijian_);
+            arrayList.add(newsBean1);
+
+            NewsBean newsBean2 = new NewsBean();
+            newsBean2.title = "1200.00";
+            newsBean2.des = "参数：";
+            newsBean2.icon = context.getResources().getDrawable(R.mipmap.peijian_);
+            arrayList.add(newsBean2);
+
+            NewsBean newsBean3 = new NewsBean();
+            newsBean3.title = "1200.00";
+            newsBean3.des = "参数：";
+            newsBean3.icon = context.getResources().getDrawable(R.mipmap.peijian_);
+            arrayList.add(newsBean3);
+        }
+
+        return arrayList;
+    }
     /**
      * 通过 web Http 获取服务器数据  到Map集合
      *

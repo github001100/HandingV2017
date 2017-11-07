@@ -12,35 +12,26 @@
         android:id="@+id/imageView7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#75baff"
+        android:background="@color/colorTitle"
         app:srcCompat="@mipmap/title_jisuan" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:text="请选择计算类型："
-        android:layout_marginLeft="5dp"
-        android:textSize="14sp"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/colorText" />
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:visibility="gone">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView15"
-                android:layout_width="70dp"
-                android:layout_height="40dp"
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="计算类型："
+                android:text="请选择计算类型："
                 android:textColor="@color/colorText"
                 android:textSize="14sp" />
 
@@ -54,24 +45,25 @@
                 android:layout_weight="1"
                 android:background="@drawable/spinner"
                 android:popupBackground="#ffffff" />
+
         </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
     </TableLayout>
 
-    <FrameLayout
+    <ProgressBar
+        android:id="@+id/progressBar4"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="5px"
+        android:layout_below="@+id/jisiuan_web"
+        />
 
-    </FrameLayout>
+    <WebView
+        android:id="@+id/jisiuan_web"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp">
+
+    </WebView>
+
 </LinearLayout>

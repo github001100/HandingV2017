@@ -143,6 +143,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 stmpLogin();
+                //用于测试
+                //Intent intent1 = new Intent(MainActivity.this, HomeActivity.class);
+                //startActivity(intent1);
             }
 
         });

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    >
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/peijian_" />
+
+        <TextView
+            android:id="@+id/peijian_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="¥2000.00"
+            android:textColor="@color/colorTitle"
+            android:textSize="20sp"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="70dp"
+             />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="适用于欧式单双梁"
+            android:textColor="@color/colorText"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="20dp"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:id="@+id/peijian_checked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="320dp"
+            android:layout_marginTop="10dp"
+            android:text="√"
+            android:textSize="20sp"
+            android:textColor="@color/colorLogin"
+            />
+
+</RelativeLayout>
