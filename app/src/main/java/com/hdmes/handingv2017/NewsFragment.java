@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.hdmes.handingv2017.MyActivitys.Food;
@@ -314,7 +313,14 @@ public class NewsFragment extends Fragment {
             @Override
             protected Food doInBackground(Food... params) {
                 Food f = params[0];
-                String imgPath = HttpUrl + "" + f.getImgPath();
+                String imgPath;
+                if(f.getImgPath().contains("http://") ||f.getImgPath().contains("https://")){
+                    imgPath = "" + f.getImgPath();//获取图片路径
+
+                }else {
+                    imgPath = HttpUrl + "" + f.getImgPath();//获取图片路径
+
+                }
                 HttpClient client = new DefaultHttpClient();
                 HttpGet get = new HttpGet(imgPath);
                 try {
